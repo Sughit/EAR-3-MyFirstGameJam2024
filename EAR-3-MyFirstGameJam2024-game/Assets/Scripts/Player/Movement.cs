@@ -37,7 +37,6 @@ public class Movement : MonoBehaviour
         }
         else
             rb.velocity = Vector2.zero;
-            Debug.Log(direction);
             RotateToPointer();
     }
     private void RotateToPointer()
