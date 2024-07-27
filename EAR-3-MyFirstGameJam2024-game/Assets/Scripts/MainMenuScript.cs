@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MainMenuScript : MonoBehaviour
 {
-    public GameObject main, settings, butonSettings, butonPlay, butonQuit;
+    [SerializeField] private GameObject main, settings, butonSettings, butonPlay, butonQuit;
     void Awake()
     {
         butonSettings.SetActive(false);
