@@ -23,6 +23,8 @@ public class MeniuInGame : MonoBehaviour
         menu.SetActive(false);
         menuCheck = false;
         Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     void Update()
     {
@@ -30,6 +32,8 @@ public class MeniuInGame : MonoBehaviour
         {
             if(!menuCheck)
             {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 menu.SetActive(true);
                 Time.timeScale = 0;
                 menuCheck = true;

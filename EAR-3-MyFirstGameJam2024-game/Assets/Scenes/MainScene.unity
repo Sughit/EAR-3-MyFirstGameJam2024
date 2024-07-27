@@ -250,6 +250,7 @@ GameObject:
   - component: {fileID: 61899784}
   - component: {fileID: 61899783}
   - component: {fileID: 61899782}
+  - component: {fileID: 61899786}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -271,6 +272,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 1
   speed: 100
+  direction: 
+  animScript: {fileID: 1322706404}
 --- !u!50 &61899783
 Rigidbody2D:
   serializedVersion: 4
@@ -334,6 +337,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &61899786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61899781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8f1cde259678994b8e2f19a72f063f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &161993416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,6 +1030,7 @@ GameObject:
   - component: {fileID: 1322706401}
   - component: {fileID: 1322706403}
   - component: {fileID: 1322706402}
+  - component: {fileID: 1322706404}
   m_Layer: 0
   m_Name: PlayerGFX
   m_TagString: Untagged
@@ -1110,6 +1126,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1322706404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322706400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f51e6b3126e823a4dbbd0aee99b6cf29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAttacking: 0
 --- !u!1 &1675372091
 GameObject:
   m_ObjectHideFlags: 0
