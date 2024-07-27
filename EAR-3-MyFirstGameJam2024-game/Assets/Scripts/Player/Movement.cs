@@ -42,22 +42,24 @@ public class Movement : MonoBehaviour
     }
     private void RotateToPointer()
     {
-        Vector3 scale = transform.localScale;
-           if (Input.GetAxisRaw("Mouse X") > 0.05f)
+        Vector3 scale = transform.GetChild(0).localScale;
+        if(!animScript.isAttacking)
+        {
+           if (Input.GetAxisRaw("Mouse X") > 0.2f)
             {
                 scale.x = 1;
                 direction = "right";
             }
-            if (Input.GetAxisRaw("Mouse X") < -0.05f)
+            if (Input.GetAxisRaw("Mouse X") < -0.2f)
             {
                 scale.x = -1;
                 direction = "left";
             }
-            if(Input.GetAxisRaw("Mouse Y") < -0.05f)
+            if(Input.GetAxisRaw("Mouse Y") < -0.2f)
                 direction = "down";
-            if(Input.GetAxisRaw("Mouse Y") > 0.05f)
+            if(Input.GetAxisRaw("Mouse Y") > 0.2f)
                 direction = "up";
-
-        transform.localScale = scale;
+        }
+        transform.GetChild(0).localScale = scale;
     }
 }
