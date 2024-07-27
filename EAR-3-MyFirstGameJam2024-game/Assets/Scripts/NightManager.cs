@@ -2,62 +2,41 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class NightManager : MonoBehaviour
 {
-    [SerializeField] private Light mainLight;
-    [SerializeField] private float minHour, maxHour;
-
-    [SerializeField] private float timeIncrease;
-    [SerializeField] private float currentHour;
+    [SerializeField] private Light2D mainLight;
+    [SerializeField] private float lerpDuration = 1;
+    float currentLerp;
 
     void Start()
     {
-        GameManager.instance.OnForestEnter += ModifyLights;
+        GameManager.instance.OnForestEnter += EnterForest;
+        GameManager.instance.OnForestExit += ExitForest;
     }
 
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.E) && GameManager.instance.inForest)
-        {
-            if(currentHour >= minHour)
-            {
-                ExitForest();
-            }
-            else
-            {
-                NotExitForest();
-            }
-        }
-
-        if(currentHour >= maxHour)
-        {
-            Debug.Log("It's time to leave");
-            ExitForest();
-        }
-    }
-    
-    void FixedUpdate()
-    {
-        if(GameManager.instance.inForest) currentHour += timeIncrease / Time.deltaTime;
-    }
-
-    void NotExitForest()
-    {
-        Debug.Log("Too early");
-    }
-
-    void ExitForest()
-    {
-        Debug.Log("Exiting forest");
-        GameManager.instance.inForest = false;
-        currentHour = 0;
-    }
-
-    void ModifyLights(object sender, EventArgs e)
+    void EnterForest(object sender, EventArgs e)
     {
         Debug.Log("Getting dark");
-        GameManager.instance.inForest = true;
+
+        ChangeLights(1, 0);
     }
  
+    void ExitForest(object sender, EventArgs e)
+    {
+        Debug.Log("Getting light");
+
+        ChangeLights(0, 1);
+    }
+
+    IEnumerator ChangeLights(float min, float max)
+    {
+        while(currentLerp < lerpDuration)
+        {
+            mainLight.intensity = Mathf.Lerp(min, max, currentLerp / lerpDuration);
+            currentLerp += Time.deltaTime;
+            yield return null;
+        }
+    }
 }
