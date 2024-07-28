@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     {
         hit = Physics2D.Raycast(transform.position, (playerGO.transform.position - transform.position).normalized, followRange);
         
-        if(hit.collider != null)
+        if(hit.collider != null || hit.collider.gameObject.tag == "Enemy")
         {
             if(hit.collider.gameObject.tag == "Player") transform.Translate(playerGO.transform.position * moveSpeed * Time.deltaTime, Space.World);
         }

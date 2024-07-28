@@ -32,7 +32,7 @@ public class PlayerAttack : MonoBehaviour
                 case "down":
                     anim.SetTrigger("attackDown");
                 break;
-
+                
             }
         switch(dir)
         {
