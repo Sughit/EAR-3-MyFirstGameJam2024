@@ -7,6 +7,7 @@ public class Agent : MonoBehaviour
 {
     private AgentAnimations agentAnimations;
     private AgentMover agentMover;
+    private AgentAttack agentAttack;
 
 
     private Vector2 pointerInput, movementInput;
@@ -26,12 +27,14 @@ public class Agent : MonoBehaviour
     public void PerformAttack()
     {
         Debug.Log("Attack");
+        agentAttack.Attack();
     }
 
     private void Awake()
     {
         agentAnimations = GetComponentInChildren<AgentAnimations>();
         agentMover = GetComponent<AgentMover>();
+        agentAttack = GetComponent<AgentAttack>();
     }
 
     private void AnimateCharacter()
