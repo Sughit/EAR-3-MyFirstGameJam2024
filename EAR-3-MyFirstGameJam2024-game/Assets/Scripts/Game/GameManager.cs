@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,9 +16,19 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float timeIncrease;
     [SerializeField] private float currentHour;
 
+    GameObject lamp;
+
     void Awake()
     {
-        instance = this;
+        if(instance == null) instance = this;
+
+        Init();
+    }
+
+    void Init()
+    {
+        lamp = GameObject.FindWithTag("Lamp");
+        lamp.SetActive(false);
     }
 
     void Update()

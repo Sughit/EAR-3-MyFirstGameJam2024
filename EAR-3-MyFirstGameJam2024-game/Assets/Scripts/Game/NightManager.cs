@@ -6,9 +6,7 @@ using UnityEngine.Rendering.Universal;
 
 public class NightManager : MonoBehaviour
 {
-    [SerializeField] private Light2D mainLight;
-    [SerializeField] private float lerpDuration = 1;
-    float currentLerp;
+    [SerializeField] private Animator anim;
 
     void Start()
     {
@@ -20,23 +18,13 @@ public class NightManager : MonoBehaviour
     {
         Debug.Log("Getting dark");
 
-        ChangeLights(1, 0);
+        anim.SetTrigger("exit");
     }
  
     void ExitForest(object sender, EventArgs e)
     {
         Debug.Log("Getting light");
 
-        ChangeLights(0, 1);
-    }
-
-    IEnumerator ChangeLights(float min, float max)
-    {
-        while(currentLerp < lerpDuration)
-        {
-            mainLight.intensity = Mathf.Lerp(min, max, currentLerp / lerpDuration);
-            currentLerp += Time.deltaTime;
-            yield return null;
-        }
+        anim.SetTrigger("exit");
     }
 }

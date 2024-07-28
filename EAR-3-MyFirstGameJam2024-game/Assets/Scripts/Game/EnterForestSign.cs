@@ -6,6 +6,14 @@ public class EnterForestSign : MonoBehaviour
 {
     bool canEnter;
 
+    [SerializeField] private ExitType exitFrom;
+
+    public enum ExitType
+    {
+        Forest,
+        Town,
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Player")
@@ -26,7 +34,8 @@ public class EnterForestSign : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && canEnter)
         {
-            GameManager.instance.EnterForest();
+            if(exitFrom == ExitType.Town) GameManager.instance.EnterForest();
+            if(exitFrom == ExitType.Forest) GameManager.instance.ExitForest();
         }
     }
 }
