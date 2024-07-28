@@ -33,10 +33,6 @@ public class GameManager : MonoBehaviour
                 NotExitForest();
             }
         }
-        else if(Input.GetKeyDown(KeyCode.E) && !inForest)
-        {
-            EnterForest();
-        }
 
         if(currentHour >= maxHour)
         {
@@ -50,12 +46,12 @@ public class GameManager : MonoBehaviour
         if(inForest) currentHour += timeIncrease / Time.deltaTime;
     }
 
-    void NotExitForest()
+    public void NotExitForest()
     {
         Debug.Log("Too early");
     }
 
-    void ExitForest()
+    public void ExitForest()
     {
         Debug.Log("Exiting forest");
         inForest = false;
@@ -64,7 +60,7 @@ public class GameManager : MonoBehaviour
         OnForestExit?.Invoke(this, EventArgs.Empty);
     }
 
-    void EnterForest()
+    public void EnterForest()
     {
         Debug.Log("Forest entered");
         inForest = true;
