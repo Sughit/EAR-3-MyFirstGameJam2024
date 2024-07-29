@@ -7,7 +7,6 @@ public class EnterForestSign : MonoBehaviour
     bool canEnter;
 
     [SerializeField] private ExitType exitFrom;
-    [SerializeField] private GameObject canvas;
 
     public enum ExitType
     {
@@ -15,12 +14,11 @@ public class EnterForestSign : MonoBehaviour
         Town,
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Player")
         {
             canEnter = true;
-            canvas.SetActive(true);
         }
     }
 
@@ -29,7 +27,6 @@ public class EnterForestSign : MonoBehaviour
         if(other.tag == "Player")
         {
             canEnter = false;
-            canvas.SetActive(false);
         }
     }
 
@@ -37,9 +34,6 @@ public class EnterForestSign : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && canEnter)
         {
-            canvas.SetActive(false);
-            GetComponent<CircleCollider2D>().enabled = false;
-
             if(exitFrom == ExitType.Town) GameManager.instance.EnterForest();
             if(exitFrom == ExitType.Forest) GameManager.instance.ExitForest();
         }
