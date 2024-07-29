@@ -16,6 +16,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float timeIncrease;
     [SerializeField] private float currentHour;
 
+    public PlayerType playerType;
+
+    public enum PlayerType
+    {
+        Knight,
+        Archer,
+        Pawn,
+    }
+
     GameObject lamp;
 
     void Awake()
