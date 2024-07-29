@@ -9,6 +9,7 @@ public class PlayerAttackArcher : MonoBehaviour
     Animator anim;
     [SerializeField]private CinemachineVirtualCamera cam;
     [SerializeField] private PentruAnimatiiArcher animScript;
+    [SerializeField] private MovementArcher movem;
     void Start()
     {
         anim = transform.GetChild(0).GetComponent<Animator>();
@@ -17,7 +18,7 @@ public class PlayerAttackArcher : MonoBehaviour
     {
         Cursor.visible = true;
         dir = GetComponent<MovementArcher>().direction;
-        if(Input.GetKeyDown(KeyCode.Mouse0) && !animScript.isAttacking)
+        if(Input.GetKeyDown(KeyCode.Mouse0) && !animScript.isAttacking && !movem.isDashing)
             switch(dir)
             {
                 case "right":

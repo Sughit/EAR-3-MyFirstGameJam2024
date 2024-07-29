@@ -11,6 +11,9 @@ public class MovementArcher : MonoBehaviour
     [SerializeField] private float speed;
     public string direction;
     [SerializeField] private PentruAnimatiiArcher animScript;
+    [SerializeField] private GameObject right, up, down, left;
+    Vector2 moveDirection;
+    public bool isDashing = false;
 
     void Start()
     {
@@ -24,10 +27,24 @@ public class MovementArcher : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
 
-        Vector2 moveDirection = new Vector2(horizontal, vertical).normalized;
+        moveDirection = new Vector2(horizontal, vertical).normalized;
         Vector3 scale = transform.localScale;
+
         if(canMove && !animScript.isAttacking)
         {
+            if(Input.GetKeyDown(KeyCode.Space) && !isDashing && moveDirection != Vector2.zero)
+            {
+                if(horizontal > 0)
+                    right.SetActive(true);
+                else if(horizontal < 0)
+                    left.SetActive(true);
+                else if(vertical > 0)
+                    up.SetActive(true);
+                else if(vertical < 0)
+                    down.SetActive(true);
+                StartCoroutine(Dash());  
+            }
+
             rb.velocity = moveDirection * speed * Time.fixedDeltaTime;
             
             if (moveDirection != Vector2.zero)
@@ -66,22 +83,24 @@ public class MovementArcher : MonoBehaviour
             {
                 direction = "down";
             }
-            Debug.Log(lookDirection.x);
-           /*if (Input.GetAxisRaw("Mouse X") > 0.2f)
-            {
-                scale.x = 1;
-                direction = "right";
-            }
-            if (Input.GetAxisRaw("Mouse X") < -0.2f)
-            {
-                scale.x = -1;
-                direction = "left";
-            }
-            if(Input.GetAxisRaw("Mouse Y") < -0.2f)
-                direction = "down";
-            if(Input.GetAxisRaw("Mouse Y") > 0.2f)
-                direction = "up";*/
         }
         transform.GetChild(0).localScale = scale;
+    }
+
+    IEnumerator Dash()
+    {
+        isDashing = true;
+        anim.SetTrigger("dash");
+        rb.AddForce(moveDirection *  100f);
+
+        yield return new WaitForSeconds(0.16f);
+
+        right.SetActive(false);
+        up.SetActive(false);
+        down.SetActive(false);
+        left.SetActive(false);
+
+        yield return new WaitForSeconds(0.65f);
+        isDashing = false;
     }
 }
