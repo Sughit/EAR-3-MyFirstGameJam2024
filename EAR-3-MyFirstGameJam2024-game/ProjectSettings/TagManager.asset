@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Lamp
+  - MapWalls
   layers:
   - Default
   - TransparentFX

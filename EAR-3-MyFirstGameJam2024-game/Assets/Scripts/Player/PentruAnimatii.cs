@@ -7,6 +7,7 @@ public class PentruAnimatii : MonoBehaviour
     List <Collider2D> colliders = new List<Collider2D>();
     public bool isAttacking = false;
     private bool cut = false;
+    [SerializeField] private float damage = 10;
 
     public void isAttackingStart()
     {
@@ -30,7 +31,7 @@ public class PentruAnimatii : MonoBehaviour
         if(col.gameObject.tag == "Enemy" && cut && verificare(col))
         {
             colliders.Add(col);
-            col.GetComponent<EnemyHealth>().TakeDamage(10f);
+            col.GetComponent<EnemyHealth>().TakeDamage(damage);
             Debug.Log("hit");
         }
     }

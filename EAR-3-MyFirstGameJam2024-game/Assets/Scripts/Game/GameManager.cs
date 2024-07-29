@@ -9,26 +9,42 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     [HideInInspector] public event EventHandler OnForestEnter; 
     [HideInInspector] public event EventHandler OnForestExit;
+
+    [Header("Forest Things")]
     public bool inForest;
-
     [SerializeField] private float minHour, maxHour;
-
     [SerializeField] private float timeIncrease;
     [SerializeField] private float currentHour;
+
+    [Header("Player Things")]
+    public PlayerType playerType;
+
+    public enum PlayerType
+    {
+        Knight,
+        Archer,
+        Pawn,
+    }
 
     GameObject lamp;
 
     void Awake()
     {
         if(instance == null) instance = this;
+    }
 
+    void Start()
+    {
         Init();
     }
 
-    void Init()
+    public void Init()
     {
-        lamp = GameObject.FindWithTag("Lamp");
-        lamp.SetActive(false);
+        if(SceneManager.GetActiveScene().name == "MainScene")
+        {
+            lamp = GameObject.FindWithTag("Lamp");
+            if(lamp != null) lamp.SetActive(false);
+        }
     }
 
     void Update()
