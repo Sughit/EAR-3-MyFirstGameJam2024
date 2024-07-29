@@ -11,6 +11,8 @@ public class Movement : MonoBehaviour
     [SerializeField] private float speed;
     public string direction;
     [SerializeField] private PentruAnimatii animScript;
+    private bool isDashing = false;
+    Vector2 moveDirection;
 
     void Start()
     {
@@ -24,11 +26,17 @@ public class Movement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
 
-        Vector2 moveDirection = new Vector2(horizontal, vertical).normalized;
+        moveDirection = new Vector2(horizontal, vertical).normalized;
         Vector3 scale = transform.localScale;
+        
         if(canMove && !animScript.isAttacking)
         {
             rb.velocity = moveDirection * speed * Time.fixedDeltaTime;
+
+            if(Input.GetKeyDown(KeyCode.Space) && !isDashing)
+            {
+                StartCoroutine(Dash());  
+            }
             
             if (moveDirection != Vector2.zero)
                 anim.SetBool("sideRunning", true);
@@ -60,5 +68,13 @@ public class Movement : MonoBehaviour
                 direction = "up";
         }
         transform.GetChild(0).localScale = scale;
+    }
+    IEnumerator Dash()
+    {
+        isDashing = true;
+        anim.SetTrigger("dash");
+        rb.AddForce(moveDirection *  100f);
+        yield return new WaitForSeconds(0.8f);
+        isDashing = false;
     }
 }
