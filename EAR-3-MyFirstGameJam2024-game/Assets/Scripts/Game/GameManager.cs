@@ -30,14 +30,12 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         if(instance == null) instance = this;
-
-        Init();
     }
 
-    void Init()
+    public void Init()
     {
         lamp = GameObject.FindWithTag("Lamp");
-        lamp.SetActive(false);
+        if(lamp != null) lamp.SetActive(false);
     }
 
     void Update()
