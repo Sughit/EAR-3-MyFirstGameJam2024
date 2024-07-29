@@ -1222,6 +1222,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: archer
       objectReference: {fileID: 0}
+    - target: {fileID: 8547822494960879858, guid: 7450b6f99bb43c14b95c9bd475113fb6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8547822494960879870, guid: 7450b6f99bb43c14b95c9bd475113fb6, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -26895,15 +26899,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 519420032, guid: fc82285a54d2d714e9a0f265b3e27fb8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.6570215
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 519420032, guid: fc82285a54d2d714e9a0f265b3e27fb8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.21109629
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 519420032, guid: fc82285a54d2d714e9a0f265b3e27fb8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 2905767007666475558, guid: fc82285a54d2d714e9a0f265b3e27fb8, type: 3}
       propertyPath: m_Name
@@ -26965,6 +26969,10 @@ PrefabInstance:
     - target: {fileID: 574761252417608962, guid: b53d2e3bbea4078478e2717abc7c9f8d, type: 3}
       propertyPath: m_Name
       value: pawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 574761252417608962, guid: b53d2e3bbea4078478e2717abc7c9f8d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 574761252417608974, guid: b53d2e3bbea4078478e2717abc7c9f8d, type: 3}
       propertyPath: m_RootOrder
