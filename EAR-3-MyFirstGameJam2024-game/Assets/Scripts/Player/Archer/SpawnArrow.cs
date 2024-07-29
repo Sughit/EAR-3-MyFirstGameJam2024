@@ -11,23 +11,31 @@ public class SpawnArrow : MonoBehaviour
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition); 
         Vector2 lookDir = mousePos - transform.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         point.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        
+        GameObject arrowGO = Instantiate(arrow, point.position, point.rotation);
 
-    
-        GameObject arrowGO = Instantiate(arrow, transform.position, Quaternion.identity);
-        arrowGO.transform.eulerAngles = point.transform.position * 90;
+        //arrowGO.transform.eulerAngles = point.transform.position * 90;
     }
 
     public void SpawnArrowDown()
     {
-        GameObject arrowGO = Instantiate(arrow, transform.position, Quaternion.identity);
-        arrowGO.transform.position = arrowGO.transform.position;
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition); 
+        Vector2 lookDir = mousePos - transform.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+        point.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        
+        GameObject arrowGO = Instantiate(arrow, point.position, point.rotation);
     }
 
     public void SpawnArrowSide()
     {
-        GameObject arrowGO = Instantiate(arrow, transform.position, Quaternion.identity);
-        if(transform.localScale.x == -1) arrowGO.transform.eulerAngles = Vector3.forward * 180;
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition); 
+        Vector2 lookDir = mousePos - transform.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+        point.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        
+        GameObject arrowGO = Instantiate(arrow, point.position, point.rotation);
     }
 }
