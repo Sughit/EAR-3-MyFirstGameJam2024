@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private PentruAnimatii animScript;
     private bool isDashing = false;
     Vector2 moveDirection;
-
+    [SerializeField] private GameObject right, up, down, left;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -33,8 +33,16 @@ public class Movement : MonoBehaviour
         {
             rb.velocity = moveDirection * speed * Time.fixedDeltaTime;
 
-            if(Input.GetKeyDown(KeyCode.Space) && !isDashing)
+            if(Input.GetKeyDown(KeyCode.Space) && !isDashing && moveDirection != Vector2.zero)
             {
+                if(horizontal > 0)
+                    right.SetActive(true);
+                else if(horizontal < 0)
+                    left.SetActive(true);
+                else if(vertical > 0)
+                    up.SetActive(true);
+                else if(vertical < 0)
+                    down.SetActive(true);
                 StartCoroutine(Dash());  
             }
             
@@ -74,7 +82,15 @@ public class Movement : MonoBehaviour
         isDashing = true;
         anim.SetTrigger("dash");
         rb.AddForce(moveDirection *  100f);
-        yield return new WaitForSeconds(0.8f);
+
+        yield return new WaitForSeconds(0.16f);
+
+        right.SetActive(false);
+        up.SetActive(false);
+        down.SetActive(false);
+        left.SetActive(false);
+
+        yield return new WaitForSeconds(0.65f);
         isDashing = false;
     }
 }
