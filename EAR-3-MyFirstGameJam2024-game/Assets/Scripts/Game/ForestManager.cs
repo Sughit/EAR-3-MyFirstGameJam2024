@@ -7,6 +7,8 @@ public class ForestManager : MonoBehaviour
     [SerializeField] private List<GameObject> forests = new List<GameObject>();
     [SerializeField] private List<BuildingSpawnPoints> buildingSpawnPoints = new List<BuildingSpawnPoints>();
     [SerializeField] private BuildingInfo[] buildings;
+    [SerializeField] private Transform[] spawnPoints;
+    [SerializeField] private GameObject knight, archer, pawn;
     int index;
 
     void Start()
@@ -15,6 +17,24 @@ public class ForestManager : MonoBehaviour
 
         forests[index].SetActive(true);
         SpawnBuildings();
+        switch(GameManager.instance.playerType)
+        {
+            case GameManager.PlayerType.Knight: 
+            Instantiate(knight, spawnPoints[index].position, Quaternion.identity);
+            break;
+
+            case GameManager.PlayerType.Archer: 
+            Instantiate(archer, spawnPoints[index].position, Quaternion.identity);
+            break;
+
+            case GameManager.PlayerType.Pawn: 
+            Instantiate(pawn, spawnPoints[index].position, Quaternion.identity);
+            break;
+
+            default:
+            Debug.Log("Not existing player");
+            break;
+        }
     }
 
     void SpawnBuildings()
