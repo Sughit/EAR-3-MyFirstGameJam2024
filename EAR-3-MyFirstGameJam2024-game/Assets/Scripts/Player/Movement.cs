@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float speed;
     public string direction;
     [SerializeField] private PentruAnimatii animScript;
-    private bool isDashing = false;
+    private bool isDashing = false, canDash = true;
     Vector2 moveDirection;
     [SerializeField] private GameObject right, up, down, left;
     void Start()
@@ -33,7 +33,7 @@ public class Movement : MonoBehaviour
         {
             rb.velocity = moveDirection * speed * Time.fixedDeltaTime;
 
-            if(Input.GetKeyDown(KeyCode.Space) && !isDashing && moveDirection != Vector2.zero)
+            if(Input.GetKeyDown(KeyCode.Space) && canDash && moveDirection != Vector2.zero)
             {
                 if(horizontal > 0)
                     right.SetActive(true);
@@ -80,17 +80,18 @@ public class Movement : MonoBehaviour
     IEnumerator Dash()
     {
         isDashing = true;
+        canDash = false;
         anim.SetTrigger("dash");
         rb.AddForce(moveDirection *  100f);
 
         yield return new WaitForSeconds(0.16f);
-
+        isDashing = false;
         right.SetActive(false);
         up.SetActive(false);
         down.SetActive(false);
         left.SetActive(false);
 
         yield return new WaitForSeconds(0.65f);
-        isDashing = false;
+        canDash = true;
     }
 }

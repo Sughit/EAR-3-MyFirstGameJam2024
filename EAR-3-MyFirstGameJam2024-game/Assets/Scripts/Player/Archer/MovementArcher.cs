@@ -13,7 +13,7 @@ public class MovementArcher : MonoBehaviour
     [SerializeField] private PentruAnimatiiArcher animScript;
     [SerializeField] private GameObject right, up, down, left;
     Vector2 moveDirection;
-    public bool isDashing = false;
+    public bool isDashing = false, canDash = true;
 
     void Start()
     {
@@ -32,7 +32,7 @@ public class MovementArcher : MonoBehaviour
 
         if(canMove && !animScript.isAttacking)
         {
-            if(Input.GetKeyDown(KeyCode.Space) && !isDashing && moveDirection != Vector2.zero)
+            if(Input.GetKeyDown(KeyCode.Space) && canDash && moveDirection != Vector2.zero)
             {
                 if(horizontal > 0)
                     right.SetActive(true);
@@ -90,17 +90,18 @@ public class MovementArcher : MonoBehaviour
     IEnumerator Dash()
     {
         isDashing = true;
+        canDash = false;
         anim.SetTrigger("dash");
         rb.AddForce(moveDirection *  100f);
 
         yield return new WaitForSeconds(0.16f);
-
+        isDashing = false;
         right.SetActive(false);
         up.SetActive(false);
         down.SetActive(false);
         left.SetActive(false);
 
         yield return new WaitForSeconds(0.65f);
-        isDashing = false;
+        canDash = true;
     }
 }

@@ -17,9 +17,9 @@ public class PlayerAttackArcher : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(directionPoint.transform.rotation.z);
         Cursor.visible = true;
         dir = GetComponent<MovementArcher>().direction;
+
         if(Input.GetKeyDown(KeyCode.Mouse0) && !animScript.isAttacking && !movem.isDashing)
             if(directionPoint.transform.rotation.z > -0.125f && directionPoint.transform.rotation.z <= 0.125f)
                 anim.SetTrigger("attackRight");
@@ -36,8 +36,6 @@ public class PlayerAttackArcher : MonoBehaviour
             else if(directionPoint.transform.rotation.z > -0.80f && directionPoint.transform.rotation.z <= -0.6f)
                 anim.SetTrigger("attackDown");
             else if(directionPoint.transform.rotation.z > -0.6f && directionPoint.transform.rotation.z <= -0.125f)
-                anim.SetTrigger("rightDown");
-            
-            
+                anim.SetTrigger("rightDown"); 
     }
 }
