@@ -10,30 +10,27 @@ public class PlayerAttackArcher : MonoBehaviour
     [SerializeField]private CinemachineVirtualCamera cam;
     [SerializeField] private PentruAnimatiiArcher animScript;
     [SerializeField] private MovementArcher movem;
+    [SerializeField] private GameObject directionPoint;
     void Start()
     {
         anim = transform.GetChild(0).GetComponent<Animator>();
     }
     void Update()
     {
+        Debug.Log(directionPoint.transform.rotation.z);
         Cursor.visible = true;
         dir = GetComponent<MovementArcher>().direction;
         if(Input.GetKeyDown(KeyCode.Mouse0) && !animScript.isAttacking && !movem.isDashing)
-            switch(dir)
-            {
-                case "right":
-                    anim.SetTrigger("attackRight");
-                break;
-                case "left":
-                    anim.SetTrigger("attackRight");
-                break;
-                case "up":
-                    anim.SetTrigger("attackUp");
-                break;
-                case "down":
-                    anim.SetTrigger("attackDown");
-                break;
-                
-            }
+            if(directionPoint.transform.rotation.z > -0.125f && directionPoint.transform.rotation.z <= 0.125f)
+                anim.SetTrigger("attackRight");
+            else if(directionPoint.transform.rotation.z > 0.125f && directionPoint.transform.rotation.z <= 0.6f)
+                anim.SetTrigger("rightUp");
+            else if(directionPoint.transform.rotation.z > 0.6f && directionPoint.transform.rotation.z <= 0.8f)
+                anim.SetTrigger("attackUp");
+            else if(directionPoint.transform.rotation.z > 0.8f && directionPoint.transform.rotation.z <= 0.985f)
+                anim.SetTrigger("rightUp");
+            else if(directionPoint.transform.rotation.z > 0.985f && directionPoint.transform.rotation.z <= -0.985f)
+                anim.SetTrigger("right");
+            
     }
 }
