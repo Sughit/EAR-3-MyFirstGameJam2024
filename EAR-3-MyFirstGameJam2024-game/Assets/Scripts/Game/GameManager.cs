@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float currentHour;
 
     public PlayerType playerType;
+    [SerializeField] private GameObject knight, archer, pawn;
+    [SerializeField] private Transform spawnPoint;
 
     public enum PlayerType
     {
@@ -30,6 +32,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         if(instance == null) instance = this;
+        else Destroy(this.gameObject);
 
         DontDestroyOnLoad(this.gameObject);
     }
@@ -78,6 +81,29 @@ public class GameManager : MonoBehaviour
         currentHour = 0;
 
         OnForestExit?.Invoke(this, EventArgs.Empty);
+
+        SceneManager.LoadScene("MainScene");
+
+        switch(playerType)
+        {
+            case PlayerType.Knight:
+            Instantiate(knight, spawnPoint.position, Quaternion.identity);
+            Init();
+            break;
+
+            case PlayerType.Archer:
+            Instantiate(archer, spawnPoint.position, Quaternion.identity);
+            Init();
+            break;
+
+            case PlayerType.Pawn:
+            Instantiate(pawn, spawnPoint.position, Quaternion.identity);
+            Init();
+            break;
+
+            default:
+            break;
+        }
     }
 
     public void EnterForest()

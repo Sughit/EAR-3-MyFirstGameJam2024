@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Lamp
+  - Global Light
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

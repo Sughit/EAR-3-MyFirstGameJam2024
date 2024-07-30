@@ -24197,7 +24197,7 @@ GameObject:
   - component: {fileID: 573956103}
   m_Layer: 0
   m_Name: spawnPoint
-  m_TagString: Untagged
+  m_TagString: SpawnPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24209,13 +24209,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 573956102}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.24, y: 0.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_Father: {fileID: 1700567136}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &574285536
 GameObject:
@@ -24814,6 +24814,7 @@ MonoBehaviour:
   archer: {fileID: 8547822494960879858, guid: 7450b6f99bb43c14b95c9bd475113fb6, type: 3}
   pawn: {fileID: 574761252417608962, guid: b53d2e3bbea4078478e2717abc7c9f8d, type: 3}
   spawnPoint: {fileID: 573956103}
+  canSelect: 1
 --- !u!4 &666303840
 Transform:
   m_ObjectHideFlags: 0
@@ -123690,10 +123691,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inForest: 0
   minHour: 2
-  maxHour: 6
+  maxHour: 3
   timeIncrease: 0.0001
   currentHour: 0
   playerType: 0
+  knight: {fileID: 2905767007666475558, guid: fc82285a54d2d714e9a0f265b3e27fb8, type: 3}
+  archer: {fileID: 8547822494960879858, guid: 7450b6f99bb43c14b95c9bd475113fb6, type: 3}
+  pawn: {fileID: 574761252417608962, guid: b53d2e3bbea4078478e2717abc7c9f8d, type: 3}
+  spawnPoint: {fileID: 573956103}
 --- !u!114 &1700567135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123718,7 +123723,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 573956103}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -128488,7 +128494,7 @@ GameObject:
   - component: {fileID: 2131920949}
   m_Layer: 0
   m_Name: Global Light
-  m_TagString: Untagged
+  m_TagString: Global Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

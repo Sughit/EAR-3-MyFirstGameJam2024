@@ -6,6 +6,21 @@ public class SelectCharacter : MonoBehaviour
 {
     [SerializeField] private GameObject knight, archer, pawn;
     [SerializeField] private Transform spawnPoint;
+    public bool canSelect = true;
+    public static SelectCharacter instance;
+
+    void Awake()
+    {
+        if(instance == null) instance = this;
+        else Destroy(this.gameObject);
+
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+    void OnEnable()
+    {
+        if(!canSelect) this.gameObject.SetActive(false);
+    }
 
     public void SelectKnight()
     {
@@ -15,6 +30,8 @@ public class SelectCharacter : MonoBehaviour
         GameManager.instance.Init();
 
         gameObject.SetActive(false);
+
+        canSelect = false;
     }
 
     public void SelectArcher()
@@ -25,6 +42,8 @@ public class SelectCharacter : MonoBehaviour
         GameManager.instance.Init();
 
         gameObject.SetActive(false);
+
+        canSelect = false;
     }
 
     public void SelectPawn()
@@ -35,5 +54,7 @@ public class SelectCharacter : MonoBehaviour
         GameManager.instance.Init();
 
         gameObject.SetActive(false);
+
+        canSelect = false;
     }
 }

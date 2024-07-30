@@ -18,6 +18,8 @@ public class MainMenuScript : MonoBehaviour
     public void PlayGame()
     {
         StartCoroutine(Butoane2());
+
+        SelectCharacter.instance.canSelect = true;
     }
     public void Settings()
     {
