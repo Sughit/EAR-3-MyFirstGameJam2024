@@ -19,7 +19,7 @@ public class MainMenuScript : MonoBehaviour
     {
         StartCoroutine(Butoane2());
 
-        SelectCharacter.instance.canSelect = true;
+        if(SelectCharacter.instance != null) SelectCharacter.instance.canSelect = true;
     }
     public void Settings()
     {

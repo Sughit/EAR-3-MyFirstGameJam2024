@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SelectCharacter : MonoBehaviour
 {
@@ -17,9 +18,18 @@ public class SelectCharacter : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    void OnEnable()
+    void Start()
     {
-        if(!canSelect) this.gameObject.SetActive(false);
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if(scene.name == "MainScene") 
+        {
+            if(canSelect) this.gameObject.SetActive(true);
+            else this.gameObject.SetActive(false);
+        }
     }
 
     public void SelectKnight()

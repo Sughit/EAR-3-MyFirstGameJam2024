@@ -19,7 +19,7 @@ public class NightManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        anim = GameObject.FindWithTag("Global Light").GetComponent<Animator>();
+        if(scene.name != "MainMenu") anim = GameObject.FindWithTag("Global Light").GetComponent<Animator>();
     }
 
     void EnterForest(object sender, EventArgs e)

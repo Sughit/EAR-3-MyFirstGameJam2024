@@ -84,6 +84,20 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadScene("MainScene");
 
+        StartCoroutine(SpawnPlayer());
+    }
+
+    public void EnterForest()
+    {
+        Debug.Log("Forest entered");
+        inForest = true;
+
+        OnForestEnter?.Invoke(this, EventArgs.Empty);
+    }
+
+    IEnumerator SpawnPlayer()
+    {
+        yield return null;
         switch(playerType)
         {
             case PlayerType.Knight:
@@ -104,13 +118,5 @@ public class GameManager : MonoBehaviour
             default:
             break;
         }
-    }
-
-    public void EnterForest()
-    {
-        Debug.Log("Forest entered");
-        inForest = true;
-
-        OnForestEnter?.Invoke(this, EventArgs.Empty);
     }
 }
