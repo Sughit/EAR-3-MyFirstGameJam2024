@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PerspectiveForBuildings : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D other)
+    /*void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.TryGetComponent<SpriteRenderer>(out SpriteRenderer renderer))
         {
@@ -15,7 +15,7 @@ public class PerspectiveForBuildings : MonoBehaviour
             SpriteRenderer ren = other.gameObject.GetComponentInChildren<SpriteRenderer>();
             if(ren != null) ren.sortingOrder = 6;
         }
-    }
+    }*/
 
     void OnTriggerStay2D(Collider2D other)
     {
