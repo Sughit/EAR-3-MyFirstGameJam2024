@@ -1206,6 +1206,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1046094239, guid: 7450b6f99bb43c14b95c9bd475113fb6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6831024915929080404, guid: 7450b6f99bb43c14b95c9bd475113fb6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6831024915929080404, guid: 7450b6f99bb43c14b95c9bd475113fb6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547822493939460377, guid: 7450b6f99bb43c14b95c9bd475113fb6, type: 3}
+      propertyPath: animScript
+      value: 
+      objectReference: {fileID: 853516964}
     - target: {fileID: 8547822494960879858, guid: 7450b6f99bb43c14b95c9bd475113fb6, type: 3}
       propertyPath: m_Name
       value: archer
@@ -26130,6 +26146,17 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &853516964 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 874199620, guid: 7450b6f99bb43c14b95c9bd475113fb6, type: 3}
+  m_PrefabInstance: {fileID: 251046778}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743304ceadcc45b4bbf4abe64008bf4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &892997849
 GameObject:
   m_ObjectHideFlags: 0
