@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 4111609359481231541}
   - component: {fileID: 8458762267948735592}
   - component: {fileID: 2284478546523239185}
-  m_Layer: 0
+  - component: {fileID: 7006420250035501363}
+  m_Layer: 6
   m_Name: goblinHouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,3 +176,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1057330d9d81c8c4988e3cccb3940e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7006420250035501363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915564234912517655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 974f995d9a029404993d53b8f9d67253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 2
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512

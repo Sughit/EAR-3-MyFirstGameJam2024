@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 2942645441136850655}
   - component: {fileID: 146008829835651512}
   - component: {fileID: 5738296921789777152}
-  m_Layer: 0
+  - component: {fileID: 1600870210004850175}
+  m_Layer: 6
   m_Name: goldMine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,3 +182,19 @@ PolygonCollider2D:
       - {x: -0.07425589, y: -0.28530094}
       - {x: 0.027232446, y: -0.23402166}
       - {x: 0.14, y: -0.25827754}
+--- !u!114 &1600870210004850175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4829911753427146159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 974f995d9a029404993d53b8f9d67253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 2
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512

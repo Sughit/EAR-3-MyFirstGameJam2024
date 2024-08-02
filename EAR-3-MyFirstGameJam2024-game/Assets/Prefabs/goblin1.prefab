@@ -426,7 +426,7 @@ MonoBehaviour:
   targetDetectionRange: 5
   obstaclesLayerMask:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 704
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 128
@@ -512,7 +512,7 @@ MonoBehaviour:
   detectionRadius: 2
   layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
   showGizmos: 1
 --- !u!1 &672324593518350126
 GameObject:
