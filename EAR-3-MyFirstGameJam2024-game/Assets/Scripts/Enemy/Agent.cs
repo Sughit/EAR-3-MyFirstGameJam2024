@@ -34,7 +34,8 @@ public class Agent : MonoBehaviour
     {
         agentAnimations = GetComponentInChildren<AgentAnimations>();
         agentMover = GetComponent<AgentMover>();
-        agentAttack = GetComponent<AgentAttack>();
+        if(GetComponent<AgentAttack>()) agentAttack = GetComponent<AgentAttack>();
+        else agentAttack = GetComponentInChildren<AgentAttack>();
     }
 
     private void AnimateCharacter()

@@ -4,20 +4,15 @@ using UnityEngine;
 
 public class AgentAttack : MonoBehaviour
 {
-    private Animator anim;
+    [HideInInspector] public  Animator anim;
 
     void Awake()
     {
         anim = GetComponentInChildren<Animator>();
     }
 
-    public void Attack()
+    public virtual void Attack()
     {
-        AttackSide();
-    }
-
-    void AttackSide()
-    {
-        anim.SetTrigger("attackRight");
+        
     }
 }
