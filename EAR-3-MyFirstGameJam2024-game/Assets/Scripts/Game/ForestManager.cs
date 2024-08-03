@@ -14,6 +14,7 @@ public class ForestManager : MonoBehaviour
     void Start()
     {
         index = Random.Range(0, forests.Count);
+        Debug.Log(index);
 
         forests[index].SetActive(true);
         SpawnBuildings();
