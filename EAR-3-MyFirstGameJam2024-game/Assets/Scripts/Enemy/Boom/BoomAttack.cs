@@ -17,11 +17,6 @@ public class BoomAttack : AgentAttack
         anim = GetComponentInChildren<Animator>();
     }
 
-    void Update()
-    {
-        if(target != null) Debug.Log(target.position);
-    }
-
     public override void Attack()
     {
         anim.SetTrigger("attack");
