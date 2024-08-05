@@ -11,8 +11,8 @@ public class ObjectiveManager : MonoBehaviour
     int numHouses, numMines, numTowers;
 
     //Sa vedem cate iteme/constructii trebuie sa colectam/distrugem (trebuie accesate de alte script-uri)
-    [HideInInspector] public int numWood, numMeat, numGold;
-    [HideInInspector] public int numHousesToDestroy, numTowersToDestroy, numMinesToDestroy;
+    public int numWood, numMeat, numGold;
+    public int numHousesToDestroy, numTowersToDestroy, numMinesToDestroy;
 
     //Variabile pt algoritmul de alegere a itemelor de colectat
     [SerializeField] int woodCost, meatCost, goldCost;

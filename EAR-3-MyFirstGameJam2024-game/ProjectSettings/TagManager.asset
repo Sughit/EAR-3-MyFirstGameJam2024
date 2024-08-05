@@ -11,6 +11,9 @@ TagManager:
   - GoblinHouse
   - GoldMine
   - GoblinTower
+  - Wood
+  - Meat
+  - Gold
   layers:
   - Default
   - TransparentFX
