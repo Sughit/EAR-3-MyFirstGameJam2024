@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 146008829835651512}
   - component: {fileID: 5738296921789777152}
   - component: {fileID: 1600870210004850175}
+  - component: {fileID: 7116114736226275367}
   m_Layer: 6
   m_Name: goldMine
-  m_TagString: Untagged
+  m_TagString: GoldMine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -198,3 +199,15 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &7116114736226275367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4829911753427146159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34c00a39c946814a81812f974c717b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

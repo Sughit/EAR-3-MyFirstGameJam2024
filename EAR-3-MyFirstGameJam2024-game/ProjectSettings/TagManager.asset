@@ -8,6 +8,9 @@ TagManager:
   - Lamp
   - Global Light
   - SpawnPoint
+  - GoblinHouse
+  - GoldMine
+  - GoblinTower
   layers:
   - Default
   - TransparentFX

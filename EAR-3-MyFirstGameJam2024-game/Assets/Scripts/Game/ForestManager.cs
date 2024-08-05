@@ -36,6 +36,8 @@ public class ForestManager : MonoBehaviour
             Debug.Log("Not existing player");
             break;
         }
+
+        ObjectiveManager.instance.GetInfoAboutLevel();
     }
 
     void SpawnBuildings()
