@@ -7,6 +7,7 @@ public class BarrelAttack : AgentAttack
     public override void Attack()
     {
         anim.SetTrigger("attack");
+        
     }
 
     public void DamageAndDestroy()

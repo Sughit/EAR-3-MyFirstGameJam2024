@@ -35,6 +35,13 @@ public class PentruAnimatii : MonoBehaviour
             enemy.TakeDamage(damage);
             Debug.Log("hit");
         }
+        ForestBuildings forest = col.GetComponent<ForestBuildings>();
+
+        if(forest != null && cut && verificare(col))
+        {
+            colliders.Add(col);
+            forest.Damage();
+        }
     }
     bool verificare(Collider2D col)
     {
