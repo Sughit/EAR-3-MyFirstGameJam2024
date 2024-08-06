@@ -20,7 +20,7 @@ public class PlayerAttackArcher : MonoBehaviour
         Cursor.visible = true;
         dir = GetComponent<MovementArcher>().direction;
 
-        if(Input.GetKeyDown(KeyCode.Mouse0) && !animScript.isAttacking && !movem.isDashing)
+        if(Input.GetKeyDown(KeyCode.Mouse0) && !animScript.isAttacking && !movem.isDashing && !animScript.isDead)
             if(directionPoint.transform.rotation.z > -0.125f && directionPoint.transform.rotation.z <= 0.125f)
                 anim.SetTrigger("attackRight");
             else if(directionPoint.transform.rotation.z > 0.125f && directionPoint.transform.rotation.z <= 0.6f)

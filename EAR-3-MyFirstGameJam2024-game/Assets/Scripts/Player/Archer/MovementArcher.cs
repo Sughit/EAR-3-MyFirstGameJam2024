@@ -29,7 +29,7 @@ public class MovementArcher : MonoBehaviour
 
         moveDirection = new Vector2(horizontal, vertical).normalized;
 
-        if(canMove && !animScript.isAttacking)
+        if(canMove && !animScript.isAttacking && !animScript.isDead)
         {
             if(Input.GetKeyDown(KeyCode.Space) && canDash && moveDirection != Vector2.zero)
             {
@@ -62,7 +62,7 @@ public class MovementArcher : MonoBehaviour
     private void RotateToPointer(Vector3 lookDirection)
     {
         Vector3 scale = transform.GetChild(0).localScale;
-        if(!animScript.isAttacking)
+        if(!animScript.isAttacking && !animScript.isDead)
         {
             if (lookDirection.x > 0)
             {
