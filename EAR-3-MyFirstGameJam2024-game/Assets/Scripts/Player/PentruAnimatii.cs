@@ -5,7 +5,7 @@ using UnityEngine;
 public class PentruAnimatii : MonoBehaviour
 {
     List <Collider2D> colliders = new List<Collider2D>();
-    public bool isAttacking = false;
+    public bool isAttacking = false, isDead = false;
     private bool cut = false;
     [SerializeField] private float damage = 10;
 
@@ -24,6 +24,10 @@ public class PentruAnimatii : MonoBehaviour
     public void inDamageStop()
     {
         cut = false;
+    }
+    public void inDying()
+    {
+        isDead = true;
     }
 
     void OnTriggerStay2D(Collider2D col)

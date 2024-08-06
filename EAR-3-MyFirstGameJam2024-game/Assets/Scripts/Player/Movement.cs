@@ -27,9 +27,8 @@ public class Movement : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical");
 
         moveDirection = new Vector2(horizontal, vertical).normalized;
-        Vector3 scale = transform.localScale;
         
-        if(canMove && !animScript.isAttacking)
+        if(canMove && !animScript.isAttacking && !animScript.isDead)
         {
             rb.velocity = moveDirection * speed * Time.fixedDeltaTime;
 
@@ -53,12 +52,13 @@ public class Movement : MonoBehaviour
         }
         else
             rb.velocity = Vector2.zero;
+
             RotateToPointer();
     }
     private void RotateToPointer()
     {
         Vector3 scale = transform.GetChild(0).localScale;
-        if(!animScript.isAttacking)
+        if(!animScript.isAttacking && !animScript.isDead)
         {
            if (Input.GetAxisRaw("Mouse X") > 0.2f)
             {

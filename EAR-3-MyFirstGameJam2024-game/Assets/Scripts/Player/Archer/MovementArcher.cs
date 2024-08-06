@@ -28,7 +28,6 @@ public class MovementArcher : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical");
 
         moveDirection = new Vector2(horizontal, vertical).normalized;
-        Vector3 scale = transform.localScale;
 
         if(canMove && !animScript.isAttacking)
         {

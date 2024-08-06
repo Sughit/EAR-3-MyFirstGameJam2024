@@ -17,7 +17,7 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         dir = GetComponent<Movement>().direction;
-        if(Input.GetKeyDown(KeyCode.Mouse0) && !animScript.isAttacking)
+        if(Input.GetKeyDown(KeyCode.Mouse0) && !animScript.isAttacking && !animScript.isDead)
             switch(dir)
             {
                 case "right":

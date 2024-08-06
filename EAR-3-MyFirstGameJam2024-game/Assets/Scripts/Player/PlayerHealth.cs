@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    float health, maxHealth = 100f;
+    private float health = 100f, maxHealth = 100f;
     [SerializeField] private Slider slider;
     [SerializeField] private Gradient grad;
     [SerializeField] private Image fill;
+    [SerializeField]private Animator anim;
 
     void Start()
     {
@@ -22,12 +23,14 @@ public class PlayerHealth : MonoBehaviour
 
         if(health <= 0)
         {
-            //animDeath
+            anim.SetTrigger("dead");
         }
     }
     void Update()
     {
         slider.value = health;
         fill.color = grad.Evaluate(slider.normalizedValue);
+        if(Input.GetKeyDown(KeyCode.K))
+            TakeDamage(100);
     }
 }
