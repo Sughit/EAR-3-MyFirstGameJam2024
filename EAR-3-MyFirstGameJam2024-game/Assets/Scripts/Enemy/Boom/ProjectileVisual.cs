@@ -29,7 +29,6 @@ public class ProjectileVisual : MonoBehaviour
         if(trajectoryProgressNormalized < .7f) {
             UpdateProjectileShadowRotation();
         }
-
     }
 
     private void UpdateShadowPosition() {

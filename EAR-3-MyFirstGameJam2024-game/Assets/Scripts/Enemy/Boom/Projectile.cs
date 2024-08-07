@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour
     private float moveSpeed;
     private float maxMoveSpeed;
     private float trajectoryMaxRelativeHeight;
-    private float distanceToTargetToDestroyProjectile = 1f;
+    [SerializeField] private float distanceToTargetToDestroyProjectile = .2f;
 
     private AnimationCurve trajectoryAnimationCurve;
     private AnimationCurve axisCorrectionAnimationCurve;
@@ -26,8 +26,12 @@ public class Projectile : MonoBehaviour
     private float nextPositionYCorrectionAbsolute;
     private float nextPositionXCorrectionAbsolute;
 
+    [SerializeField] private Animator anim;
+
     private void Start() {
         trajectoryStartPoint = transform.position;
+
+        Invoke("Explode", .2f);
     }
 
     private void Update() {
@@ -35,14 +39,20 @@ public class Projectile : MonoBehaviour
         UpdateProjectilePosition();
 
         if (Vector3.Distance(transform.position, target.position) < distanceToTargetToDestroyProjectile) {
-            Destroy(gameObject);
+            Explode();
         }
+    }
+
+    void Explode()
+    {
+        moveSpeed = 0;
+        anim.SetTrigger("explode");
     }
 
     private void UpdateProjectilePosition() {
         trajectoryRange = target.position - trajectoryStartPoint;
 
-        if(Mathf.Abs(trajectoryRange.normalized.x) < Mathf.Abs(trajectoryRange.normalized.y)) {
+        if(Mathf.Abs(trajectoryRange.normalized.x) <= Mathf.Abs(trajectoryRange.normalized.y)) {
             // Projectile will be curved on the X axis
 
             if (trajectoryRange.y < 0) {

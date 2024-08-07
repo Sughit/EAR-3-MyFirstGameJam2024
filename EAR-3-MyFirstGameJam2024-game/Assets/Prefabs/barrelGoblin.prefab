@@ -406,6 +406,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  damage: 25
+  range: 0.5
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &6109885875103671162
 GameObject:
   m_ObjectHideFlags: 0
