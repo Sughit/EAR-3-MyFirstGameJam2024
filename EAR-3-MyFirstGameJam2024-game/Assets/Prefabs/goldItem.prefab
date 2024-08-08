@@ -11,7 +11,10 @@ GameObject:
   - component: {fileID: 8682619631814141834}
   - component: {fileID: 1760184355190508106}
   - component: {fileID: 5818843930911879964}
-  m_Layer: 0
+  - component: {fileID: 2614977696077111804}
+  - component: {fileID: 794400264105803248}
+  - component: {fileID: 1311243314424734296}
+  m_Layer: 10
   m_Name: goldItem
   m_TagString: Gold
   m_Icon: {fileID: 0}
@@ -95,5 +98,54 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d34c00a39c946814a81812f974c717b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &2614977696077111804
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8607148568517521431}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b8ad961f824fda245adf017218d66670, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!58 &794400264105803248
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8607148568517521431}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.03, y: -0.12}
+  serializedVersion: 2
+  m_Radius: 0.3
+--- !u!114 &1311243314424734296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8607148568517521431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f962671a22715b4fa8ad50e1df96411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

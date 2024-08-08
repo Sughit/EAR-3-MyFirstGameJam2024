@@ -11,17 +11,17 @@ public class CompleteObjectiveGO : MonoBehaviour
         tag = gameObject.tag;
     }
 
-    // void OnDestroy()
-    // {
-    //     Debug.Log("Destroyed " + gameObject.name);
+    void OnDestroy()
+    {
+        Debug.Log("Destroyed " + gameObject.name);
 
-    //     if(ObjectiveManager.instance.objectiveType == ObjectiveManager.ObjectiveType.DestroyBuildings)
-    //     {
-    //         ObjectiveManager.instance.DestroyBuilding(tag);
-    //     }
-    //     else if(ObjectiveManager.instance.objectiveType == ObjectiveManager.ObjectiveType.CollectItems)
-    //     {
-    //         ObjectiveManager.instance.CollectItem(tag);
-    //     }
-    // }
+        if(ObjectiveManager.instance.objectiveType == ObjectiveManager.ObjectiveType.DestroyBuildings)
+        {
+            ObjectiveManager.instance.DestroyBuilding(tag);
+        }
+        else if(ObjectiveManager.instance.objectiveType == ObjectiveManager.ObjectiveType.CollectItems)
+        {
+            ObjectiveManager.instance.CollectItem(tag);
+        }
+    }
 }
