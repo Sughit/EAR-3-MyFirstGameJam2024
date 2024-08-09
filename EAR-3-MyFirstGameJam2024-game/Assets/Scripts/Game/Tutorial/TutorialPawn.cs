@@ -39,4 +39,13 @@ public class TutorialPawn : MonoBehaviour
             }
         }
     }
+
+    public void EndTutorial()
+    {
+        if(GameManager.instance.playerType != GameManager.PlayerType.Archer)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+    }
 }
