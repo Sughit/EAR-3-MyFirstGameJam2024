@@ -13,8 +13,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private float minHour, maxHour;
 
-    [SerializeField] private float timeIncrease;
-    [SerializeField] private float currentHour;
+    [SerializeField] private const float secondsPerDay = 300f;
+    public float currentHour;
 
     public PlayerType playerType;
     [SerializeField] private GameObject knight, archer, pawn;
@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(inForest) currentHour += timeIncrease / Time.deltaTime;
+        if(inForest) currentHour += Time.deltaTime / secondsPerDay;
     }
 
     public void NotExitForest()

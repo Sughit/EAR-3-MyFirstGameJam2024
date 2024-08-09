@@ -123928,7 +123928,6 @@ MonoBehaviour:
   inForest: 0
   minHour: 2
   maxHour: 3
-  timeIncrease: 0.0001
   currentHour: 0
   playerType: 0
   knight: {fileID: 2905767007666475558, guid: fc82285a54d2d714e9a0f265b3e27fb8, type: 3}

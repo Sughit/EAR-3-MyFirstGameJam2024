@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 672324592610849739}
   - component: {fileID: 672324592610849736}
   - component: {fileID: 672324592610849737}
+  - component: {fileID: 91549985175387185}
   m_Layer: 8
   m_Name: GFX
   m_TagString: Enemy
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 672324592610849733}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.066, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -119,6 +120,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e46e169f88bb6374db593835d3d6341f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &91549985175387185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672324592610849733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7aa7632109c75f45b3dd1a21159772d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  range: 0.4
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  offset: {x: 0.5, y: 0, z: 0}
+  damage: 5
 --- !u!1 &672324592910289608
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,7 +188,6 @@ GameObject:
   - component: {fileID: 672324592948674623}
   - component: {fileID: 672324592948674562}
   - component: {fileID: 672324592948674621}
-  - component: {fileID: 1636404003443881826}
   m_Layer: 8
   m_Name: torchGoblin
   m_TagString: Enemy
@@ -367,19 +386,6 @@ MonoBehaviour:
         m_CallState: 2
   movementInput: {x: 0, y: 0}
   movementDirectionSolver: {fileID: 672324593894631011}
---- !u!114 &1636404003443881826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 672324592948674613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7aa7632109c75f45b3dd1a21159772d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
 --- !u!1 &672324593261245384
 GameObject:
   m_ObjectHideFlags: 0
