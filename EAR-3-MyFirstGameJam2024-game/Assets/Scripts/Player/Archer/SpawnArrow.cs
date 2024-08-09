@@ -7,10 +7,11 @@ public class SpawnArrow : MonoBehaviour
     [SerializeField] private GameObject arrow;
     [SerializeField] private Transform point;
     [SerializeField] private PentruAnimatiiArcher animScript;
+    [SerializeField] private MeniuInGame menu;
 
     void Update()
     {
-        if(!animScript.isAttacking)
+        if(!animScript.isAttacking && !menu.menuCheck)
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition); 
             Vector2 lookDir = mousePos - transform.position;

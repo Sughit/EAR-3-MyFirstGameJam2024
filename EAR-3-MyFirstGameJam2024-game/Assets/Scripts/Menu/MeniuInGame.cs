@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MeniuInGame : MonoBehaviour
 {
     [SerializeField] private GameObject menu, sunet;
-    private bool menuCheck;
+    public bool menuCheck;
 
     public void MainMenu()
     {

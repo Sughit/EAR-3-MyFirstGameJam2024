@@ -12,6 +12,7 @@ public class ArrowScript : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        Destroy(gameObject, 6f);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -22,6 +23,11 @@ public class ArrowScript : MonoBehaviour
             transform.SetParent(other.transform);   
             other.TryGetComponent<EnemyHealth>(out EnemyHealth enemy);
             if(enemy != null) enemy.TakeDamage(damage);
+
+            other.TryGetComponent<ForestBuildings>(out ForestBuildings forest);
+            if(forest != null)forest.Damage();
+            
+            Destroy(gameObject);
         }     
     }
 

@@ -8,6 +8,7 @@ public class PentruAnimatii : MonoBehaviour
     public bool isAttacking = false, isDead = false;
     private bool cut = false;
     [SerializeField] private float damage = 10;
+    [SerializeField] private GameObject sunetBreak;
 
     public void isAttackingStart()
     {
@@ -43,6 +44,7 @@ public class PentruAnimatii : MonoBehaviour
 
         if(forest != null && cut && verificare(col))
         {
+            Instantiate(sunetBreak);
             colliders.Add(col);
             forest.Damage();
         }

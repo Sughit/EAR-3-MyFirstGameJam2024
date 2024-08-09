@@ -29,7 +29,9 @@ public class MovementArcher : MonoBehaviour
 
         moveDirection = new Vector2(horizontal, vertical).normalized;
 
-        if((horizontal != 0 || vertical != 0) && !merge)
+        if(canMove && !animScript.isAttacking && !animScript.isDead)
+        {
+            if((horizontal != 0 || vertical != 0) && !merge)
             {
                 Instantiate(sunetMers);
                 merge = true;
@@ -39,9 +41,7 @@ public class MovementArcher : MonoBehaviour
                 Destroy(GameObject.Find("sunetMers(Clone)"));
                 merge = false;
             }
-
-        if(canMove && !animScript.isAttacking && !animScript.isDead)
-        {
+            
             if(Input.GetKeyDown(KeyCode.Space) && canDash && moveDirection != Vector2.zero)
             {
                 if(horizontal > 0)
