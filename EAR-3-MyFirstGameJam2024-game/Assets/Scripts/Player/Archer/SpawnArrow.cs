@@ -9,6 +9,10 @@ public class SpawnArrow : MonoBehaviour
     [SerializeField] private PentruAnimatiiArcher animScript;
     [SerializeField] private MeniuInGame menu;
 
+    void Awake()
+    {
+        menu = GameObject.Find("MainCanvas").GetComponent<MeniuInGame>();
+    }
     void Update()
     {
         if(!animScript.isAttacking && !menu.menuCheck)

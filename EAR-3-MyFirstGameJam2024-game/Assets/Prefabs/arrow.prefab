@@ -116,3 +116,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   damage: 10
+  sunetBreak: {fileID: 81318471811775586, guid: 957cd483439549f439021bdc0f061efe, type: 3}

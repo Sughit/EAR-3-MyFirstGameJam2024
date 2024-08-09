@@ -7,6 +7,7 @@ public class ArrowScript : MonoBehaviour
     bool canMove = true;
     [SerializeField] private float speed = 5;
     [SerializeField] private float damage = 10;
+    [SerializeField] private GameObject sunetBreak;
     Rigidbody2D rb;
 
     void Awake()
@@ -25,8 +26,12 @@ public class ArrowScript : MonoBehaviour
             if(enemy != null) enemy.TakeDamage(damage);
 
             other.TryGetComponent<ForestBuildings>(out ForestBuildings forest);
-            if(forest != null)forest.Damage();
-            
+            if(forest != null)
+            {
+                forest.Damage();
+                Instantiate(sunetBreak);
+            } 
+
             Destroy(gameObject);
         }     
     }

@@ -7,11 +7,15 @@ public class BarrelAttack : AgentAttack
     [SerializeField] private float damage;
     [SerializeField] private float range;
     [SerializeField] private LayerMask layerMask;
+    [SerializeField] private float time = 3f;
 
+    void Awake()
+    {
+        Invoke("Attack", time);
+    }
     public override void Attack()
     {
-        anim.SetTrigger("attack");
-        
+        anim.SetTrigger("attack");    
     }
 
     public void Damage()
