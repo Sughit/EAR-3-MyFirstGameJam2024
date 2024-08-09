@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MeniuInGame : MonoBehaviour
 {
-    [SerializeField] private GameObject menu;
+    [SerializeField] private GameObject menu, sunet;
     private bool menuCheck;
 
     public void MainMenu()
@@ -24,6 +24,10 @@ public class MeniuInGame : MonoBehaviour
         menuCheck = false;
         Time.timeScale = 1;
         Cursor.visible = false;
+    }
+    public void Sunet()
+    {
+        Instantiate(sunet);
     }
     void Update()
     {

@@ -1175,6 +1175,7 @@ MonoBehaviour:
   up: {fileID: 2100296487}
   down: {fileID: 1980299677}
   left: {fileID: 1018275488}
+  sunetMers: {fileID: 81318471811775586, guid: 62800632c8ff4c74db3d92f552b418a6, type: 3}
 --- !u!114 &574761252417608973
 MonoBehaviour:
   m_ObjectHideFlags: 0

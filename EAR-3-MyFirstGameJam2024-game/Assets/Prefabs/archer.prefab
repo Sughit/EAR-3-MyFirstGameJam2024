@@ -2510,8 +2510,10 @@ MonoBehaviour:
   up: {fileID: 1477586415}
   down: {fileID: 1163466048}
   left: {fileID: 919403290}
+  sunetMers: {fileID: 81318471811775586, guid: 62800632c8ff4c74db3d92f552b418a6, type: 3}
   isDashing: 0
   canDash: 1
+  merge: 0
 --- !u!114 &632053091
 MonoBehaviour:
   m_ObjectHideFlags: 0

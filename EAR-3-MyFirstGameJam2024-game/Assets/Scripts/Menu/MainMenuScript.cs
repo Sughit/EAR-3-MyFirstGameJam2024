@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MainMenuScript : MonoBehaviour
 {
-    [SerializeField] private GameObject main, settings, butonSettings, butonPlay, butonQuit;
+    [SerializeField] private GameObject main, settings, butonSettings, butonPlay, butonQuit, sunet;
     void Awake()
     {
         butonSettings.SetActive(false);
@@ -34,6 +34,10 @@ public class MainMenuScript : MonoBehaviour
     {
         settings.SetActive(false);
         main.SetActive(true);
+    }
+    public void Sunet()
+    {
+        Instantiate(sunet);
     }
     IEnumerator Butoane()
     {

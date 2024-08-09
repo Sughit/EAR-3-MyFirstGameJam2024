@@ -11,9 +11,9 @@ public class MovementArcher : MonoBehaviour
     [SerializeField] private float speed;
     public string direction;
     [SerializeField] private PentruAnimatiiArcher animScript;
-    [SerializeField] private GameObject right, up, down, left;
+    [SerializeField] private GameObject right, up, down, left, sunetMers;
     Vector2 moveDirection;
-    public bool isDashing = false, canDash = true;
+    public bool isDashing = false, canDash = true, merge = false;
 
     void Start()
     {
@@ -28,6 +28,17 @@ public class MovementArcher : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical");
 
         moveDirection = new Vector2(horizontal, vertical).normalized;
+
+        if((horizontal != 0 || vertical != 0) && !merge)
+            {
+                Instantiate(sunetMers);
+                merge = true;
+            }
+            else if((horizontal == 0 && vertical == 0))
+            {
+                Destroy(GameObject.Find("sunetMers(Clone)"));
+                merge = false;
+            }
 
         if(canMove && !animScript.isAttacking && !animScript.isDead)
         {

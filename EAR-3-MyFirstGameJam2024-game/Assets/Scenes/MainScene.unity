@@ -20065,6 +20065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 992512175}
+  sunet: {fileID: 81318471811775586, guid: 0206ce16b88d6c04cb2b15e17f5ce968, type: 3}
 --- !u!114 &58651566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20943,6 +20944,18 @@ MonoBehaviour:
       - m_Target: {fileID: 58651565}
         m_TargetAssemblyTypeName: MeniuInGame, Assembly-CSharp
         m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 58651565}
+        m_TargetAssemblyTypeName: MeniuInGame, Assembly-CSharp
+        m_MethodName: Sunet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22835,6 +22848,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 58651565}
+        m_TargetAssemblyTypeName: MeniuInGame, Assembly-CSharp
+        m_MethodName: Sunet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &370872838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23951,6 +23976,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 58651565}
+        m_TargetAssemblyTypeName: MeniuInGame, Assembly-CSharp
+        m_MethodName: Sunet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &488567284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24778,6 +24815,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 58651565}
+        m_TargetAssemblyTypeName: MeniuInGame, Assembly-CSharp
+        m_MethodName: Sunet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 666303839}
         m_TargetAssemblyTypeName: SelectCharacter, Assembly-CSharp
         m_MethodName: SelectPawn
@@ -25098,6 +25147,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 58651565}
+        m_TargetAssemblyTypeName: MeniuInGame, Assembly-CSharp
+        m_MethodName: Sunet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 666303839}
         m_TargetAssemblyTypeName: SelectCharacter, Assembly-CSharp
         m_MethodName: SelectKnight
@@ -118316,6 +118377,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 58651565}
+        m_TargetAssemblyTypeName: MeniuInGame, Assembly-CSharp
+        m_MethodName: Sunet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 666303839}
         m_TargetAssemblyTypeName: SelectCharacter, Assembly-CSharp
         m_MethodName: SelectArcher

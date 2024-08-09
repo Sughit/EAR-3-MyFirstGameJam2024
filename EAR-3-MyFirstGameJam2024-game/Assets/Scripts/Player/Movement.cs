@@ -11,9 +11,9 @@ public class Movement : MonoBehaviour
     [SerializeField] private float speed;
     public string direction;
     [SerializeField] private PentruAnimatii animScript;
-    private bool isDashing = false, canDash = true;
+    private bool isDashing = false, canDash = true, merge = false;
     Vector2 moveDirection;
-    [SerializeField] private GameObject right, up, down, left;
+    [SerializeField] private GameObject right, up, down, left, sunetMers;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -31,6 +31,17 @@ public class Movement : MonoBehaviour
         if(canMove && !animScript.isAttacking && !animScript.isDead)
         {
             rb.velocity = moveDirection * speed * Time.fixedDeltaTime;
+
+            if((horizontal != 0 || vertical != 0) && !merge)
+            {
+                Instantiate(sunetMers);
+                merge = true;
+            }
+            else if((horizontal == 0 && vertical == 0))
+            {
+                Destroy(GameObject.Find("sunetMers(Clone)"));
+                merge = false;
+            }
 
             if(Input.GetKeyDown(KeyCode.Space) && canDash && moveDirection != Vector2.zero)
             {
