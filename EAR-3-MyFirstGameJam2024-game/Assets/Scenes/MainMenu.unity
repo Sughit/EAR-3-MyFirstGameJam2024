@@ -4024,7 +4024,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Title
+  m_text: RuinKnight
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c24c98ad1891ab34a92f0b99f3a5bcc6, type: 2}
   m_sharedMaterial: {fileID: -8439926487397937499, guid: c24c98ad1891ab34a92f0b99f3a5bcc6, type: 2}
