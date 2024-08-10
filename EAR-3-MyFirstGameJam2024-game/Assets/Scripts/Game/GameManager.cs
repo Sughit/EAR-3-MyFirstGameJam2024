@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     public PlayerType playerType;
     [SerializeField] private GameObject knight, archer, pawn;
     [SerializeField] private Transform spawnPoint;
+    [SerializeField] private AudioSource audio;
+    private bool canta = true;
 
     public enum PlayerType
     {
@@ -62,6 +64,12 @@ public class GameManager : MonoBehaviour
             Debug.Log("It's time to leave");
             ExitForest();
         }
+
+        if(SceneManager.GetActiveScene().name == "MainMenu")
+            audio.enabled = false;
+        else
+            audio.enabled = true;
+
     }
 
     void FixedUpdate()
