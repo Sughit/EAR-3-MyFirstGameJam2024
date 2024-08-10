@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ObjectiveManager : MonoBehaviour
 {
@@ -231,6 +232,7 @@ public class ObjectiveManager : MonoBehaviour
             if(numHousesToDestroy <= 0 && numMinesToDestroy <= 0 && numTowersToDestroy <= 0) 
             {
                 Debug.Log("Objective Completed");
+                SceneManager.LoadScene("MainScene");
             }
         }
         else
@@ -238,6 +240,7 @@ public class ObjectiveManager : MonoBehaviour
             if(numWood <= 0 && numMeat <= 0 && numGold <= 0) 
             {
                 Debug.Log("Objective Completed");
+                SceneManager.LoadScene("MainScene");
             }
         }
     }

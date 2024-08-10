@@ -20,6 +20,7 @@ public class MainMenuScript : MonoBehaviour
         StartCoroutine(Butoane2());
 
         if(SelectCharacter.instance != null) SelectCharacter.instance.canSelect = true;
+        MeniuInGame.loadingMainMenu = false;
     }
     public void Settings()
     {

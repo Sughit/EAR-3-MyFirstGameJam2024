@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    float maxHealth = 100f;
+    [SerializeField] float maxHealth = 100f;
     [SerializeField] private float health;
     [SerializeField] private int numDrops;
     [SerializeField] private GameObject[] drops;
     [SerializeField] private float range;
+    Animator anim;
+
+    void Awake()
+    {
+        anim = GetComponentInChildren<Animator>();
+    }
+
     void Start()
     {
         health = maxHealth;
@@ -16,6 +23,7 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        anim.SetTrigger("takeDamage");
         if(health <= 0)
         {
             for(int i = 0; i < drops.Length; i++)

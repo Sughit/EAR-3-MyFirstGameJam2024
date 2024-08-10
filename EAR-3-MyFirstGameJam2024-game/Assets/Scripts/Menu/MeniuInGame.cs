@@ -7,11 +7,13 @@ public class MeniuInGame : MonoBehaviour
 {
     [SerializeField] private GameObject menu, sunet;
     public bool menuCheck;
+    public static bool loadingMainMenu;
 
     public void MainMenu()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
+        loadingMainMenu = true;
     }
     public void Quit()
     {

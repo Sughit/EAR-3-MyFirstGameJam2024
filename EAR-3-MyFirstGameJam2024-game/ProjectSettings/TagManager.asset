@@ -26,7 +26,7 @@ TagManager:
   - Enemy
   - Tree
   - Item
-  - 
+  - Minimap
   - 
   - 
   - 
@@ -50,4 +50,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Minimap
+    uniqueID: 2833622521
     locked: 0
