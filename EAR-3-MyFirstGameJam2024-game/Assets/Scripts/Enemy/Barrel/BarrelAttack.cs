@@ -12,6 +12,7 @@ public class BarrelAttack : AgentAttack
     void Awake()
     {
         Invoke("Attack", time);
+        anim = GetComponent<Animator>();
     }
     public override void Attack()
     {

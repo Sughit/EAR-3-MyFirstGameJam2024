@@ -8,6 +8,12 @@ public class PentruAnimatiiArcher : MonoBehaviour
     public bool isAttacking = false, isDead = false;
     private bool cut = false;
     [SerializeField] private float damage = 10;
+    private PlayerHealth health;
+
+    void Awake()
+    {
+        health = transform.parent.gameObject.GetComponent<PlayerHealth>();
+    }
 
     public void isAttackingStart()
     {
@@ -28,5 +34,10 @@ public class PentruAnimatiiArcher : MonoBehaviour
     public void inDying()
     {
         isDead = true;
+    }
+
+    public void ShowDeathMenu()
+    {
+        health.ShowDeathMenu();
     }
 }

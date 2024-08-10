@@ -9,6 +9,12 @@ public class PentruAnimatii : MonoBehaviour
     private bool cut = false;
     [SerializeField] private float damage = 10;
     [SerializeField] private GameObject sunetBreak;
+    private PlayerHealth health;
+
+    void Awake()
+    {
+        health = transform.parent.gameObject.GetComponent<PlayerHealth>();
+    }
 
     public void isAttackingStart()
     {
@@ -29,6 +35,11 @@ public class PentruAnimatii : MonoBehaviour
     public void inDying()
     {
         isDead = true;
+    }
+
+    public void ShowDeathMenu()
+    {
+        health.ShowDeathMenu();
     }
 
     void OnTriggerStay2D(Collider2D col)

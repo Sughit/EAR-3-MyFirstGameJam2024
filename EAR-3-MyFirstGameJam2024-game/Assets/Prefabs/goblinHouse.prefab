@@ -238,6 +238,15 @@ MonoBehaviour:
   dropRange: 1.2
   damageSprites:
   - {fileID: 21300000, guid: 141eebcbb195ef04b9d384d104f849fc, type: 3}
+  numEnemies: 2
+  enemies:
+  - {fileID: 672324592948674613, guid: 7cfcfb9312f88844fa0c5172cc567a2d, type: 3}
+  - {fileID: 1807942458037916280, guid: 80020b413bfdb8c4393126ddc4fe6f32, type: 3}
+  numEnemiesFromDamage: 1
+  enemiesFromDamage:
+  - {fileID: 6109885875103671162, guid: 8a777a2440b0d8b4c892852e016834d6, type: 3}
+  - {fileID: 1807942458037916280, guid: 80020b413bfdb8c4393126ddc4fe6f32, type: 3}
+  - {fileID: 672324592948674613, guid: 7cfcfb9312f88844fa0c5172cc567a2d, type: 3}
 --- !u!114 &-57206624443055987
 MonoBehaviour:
   m_ObjectHideFlags: 0

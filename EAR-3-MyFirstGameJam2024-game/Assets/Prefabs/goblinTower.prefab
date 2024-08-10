@@ -216,6 +216,15 @@ MonoBehaviour:
   damageSprites:
   - {fileID: 21300000, guid: ef3c1fc6d3affc245bcb7396688ef53e, type: 3}
   - {fileID: 21300000, guid: 4552abd695502ff459bd704a48549d9d, type: 3}
+  numEnemies: 3
+  enemies:
+  - {fileID: 672324592948674613, guid: 7cfcfb9312f88844fa0c5172cc567a2d, type: 3}
+  - {fileID: 1807942458037916280, guid: 80020b413bfdb8c4393126ddc4fe6f32, type: 3}
+  numEnemiesFromDamage: 2
+  enemiesFromDamage:
+  - {fileID: 1807942458037916280, guid: 80020b413bfdb8c4393126ddc4fe6f32, type: 3}
+  - {fileID: 6109885875103671162, guid: 8a777a2440b0d8b4c892852e016834d6, type: 3}
+  - {fileID: 672324592948674613, guid: 7cfcfb9312f88844fa0c5172cc567a2d, type: 3}
 --- !u!114 &1017345988751945742
 MonoBehaviour:
   m_ObjectHideFlags: 0

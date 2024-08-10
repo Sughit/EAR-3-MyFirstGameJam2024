@@ -10,6 +10,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private Gradient grad;
     [SerializeField] private Image fill;
     [SerializeField]private Animator anim;
+    [SerializeField] private GameObject deathMenu;
+    bool isDead;
 
     void Start()
     {
@@ -21,16 +23,23 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= damage;
 
-        if(health <= 0)
+        if(health <= 0 && !isDead)
         {
             anim.SetTrigger("dead");
+            isDead = true;
         }
     }
+
+    public void ShowDeathMenu()
+    {
+        deathMenu.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
     void Update()
     {
         slider.value = health;
         fill.color = grad.Evaluate(slider.normalizedValue);
-        if(Input.GetKeyDown(KeyCode.K))
-            TakeDamage(100);
     }
 }

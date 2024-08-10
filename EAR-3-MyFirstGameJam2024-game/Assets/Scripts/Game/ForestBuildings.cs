@@ -11,6 +11,10 @@ public class ForestBuildings : MonoBehaviour
     [SerializeField] private int numDrops;
     [SerializeField] private float dropRange;
     [SerializeField] private Sprite[] damageSprites;
+    [SerializeField] private int numEnemies;
+    [SerializeField] private GameObject[] enemies;
+    [SerializeField] private int numEnemiesFromDamage;
+    [SerializeField] private GameObject[] enemiesFromDamage;
     int index;
     SpriteRenderer spriteRenderer;
     Animator anim;
@@ -24,6 +28,10 @@ public class ForestBuildings : MonoBehaviour
         foreach(Collider2D tree in trees)
         {
             Destroy(tree.gameObject);
+        }
+        for(int i = 0; i < numEnemies; i++)
+        {
+            Instantiate(enemies[Random.Range(0, enemies.Length)], new Vector2(transform.position.x, transform.position.y) + Random.insideUnitCircle * range, Quaternion.identity);
         }
     }
 
@@ -44,6 +52,10 @@ public class ForestBuildings : MonoBehaviour
         {
             spriteRenderer.sprite = damageSprites[index];
             index++;
+            for(int i = 0; i < numEnemiesFromDamage; i++)
+            {
+                Instantiate(enemiesFromDamage[Random.Range(0, enemiesFromDamage.Length)], new Vector2(transform.position.x, transform.position.y) + Random.insideUnitCircle * range, Quaternion.identity);
+            }
         }
         else if(hits == 4 && damageSprites.Length > 1)
         {
@@ -59,7 +71,7 @@ public class ForestBuildings : MonoBehaviour
                     Instantiate(drops[Random.Range(0, drops.Length)], new Vector2(transform.position.x, transform.position.y) + Random.insideUnitCircle * dropRange, Quaternion.identity);
                 }
             }
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
