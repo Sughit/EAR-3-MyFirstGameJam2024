@@ -22,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        health = Mathf.Clamp(health, 0, maxHealth);
 
         if(health <= 0 && !isDead)
         {
