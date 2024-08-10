@@ -14,6 +14,7 @@ public class CompleteObjectiveGO : MonoBehaviour
     void OnDestroy()
     {
         if(MeniuInGame.loadingMainMenu) return;
+        if(ObjectiveManager.instance.objectiveCompleted) return;
         Debug.Log("Destroyed " + gameObject.name);
 
         if(ObjectiveManager.instance.objectiveType == ObjectiveManager.ObjectiveType.DestroyBuildings)
