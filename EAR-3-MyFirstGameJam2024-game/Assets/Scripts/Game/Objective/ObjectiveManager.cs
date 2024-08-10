@@ -38,6 +38,8 @@ public class ObjectiveManager : MonoBehaviour
         CollectItems,
     }
 
+    public bool objectiveCompleted = false;
+
     void Awake()
     {
         instance = this;
@@ -55,6 +57,7 @@ public class ObjectiveManager : MonoBehaviour
     public void SelectObjective()
     {
         index = Random.Range(0, 2);
+        objectiveCompleted = false;
         if(index == 1)
         {
             //Get items objective
@@ -233,6 +236,7 @@ public class ObjectiveManager : MonoBehaviour
             {
                 Debug.Log("Objective Completed");
                 SceneManager.LoadScene("MainScene");
+                objectiveCompleted = true;
             }
         }
         else
@@ -241,6 +245,7 @@ public class ObjectiveManager : MonoBehaviour
             {
                 Debug.Log("Objective Completed");
                 SceneManager.LoadScene("MainScene");
+                objectiveCompleted = true;
             }
         }
     }
