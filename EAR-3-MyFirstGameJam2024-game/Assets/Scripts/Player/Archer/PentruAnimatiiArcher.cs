@@ -9,6 +9,7 @@ public class PentruAnimatiiArcher : MonoBehaviour
     private bool cut = false;
     [SerializeField] private float damage = 10;
     private PlayerHealth health;
+    [SerializeField] private GameObject sunetArcher;
 
     void Awake()
     {
@@ -39,5 +40,10 @@ public class PentruAnimatiiArcher : MonoBehaviour
     public void ShowDeathMenu()
     {
         health.ShowDeathMenu();
+    }
+
+    public void SunetAttack()
+    {
+            Instantiate(sunetArcher);
     }
 }

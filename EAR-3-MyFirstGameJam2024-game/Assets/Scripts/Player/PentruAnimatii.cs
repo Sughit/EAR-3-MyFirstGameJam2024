@@ -8,8 +8,9 @@ public class PentruAnimatii : MonoBehaviour
     public bool isAttacking = false, isDead = false;
     private bool cut = false;
     [SerializeField] private float damage = 10;
-    [SerializeField] private GameObject sunetBreak;
+    [SerializeField] private GameObject sunetBreak, sunetKnight, sunetPawn;
     private PlayerHealth health;
+    [SerializeField] string type;
 
     void Awake()
     {
@@ -40,6 +41,13 @@ public class PentruAnimatii : MonoBehaviour
     public void ShowDeathMenu()
     {
         health.ShowDeathMenu();
+    }
+    public void SunetAttack()
+    {
+        if(type == "knight")
+            Instantiate(sunetKnight);
+        if(type == "pawn")
+            Instantiate(sunetPawn);
     }
 
     void OnTriggerStay2D(Collider2D col)
@@ -72,4 +80,5 @@ public class PentruAnimatii : MonoBehaviour
         if(!isAttacking)
             colliders = new List<Collider2D>();
     }
+
 }

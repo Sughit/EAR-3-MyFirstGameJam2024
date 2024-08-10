@@ -124,6 +124,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 128
+  sunetExplode: {fileID: 81318471811775586, guid: 07e358309a76ebb49b770d3b0ff39744, type: 3}
 --- !u!1 &3492701687062353549
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,6 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileVisual: {fileID: 2135278630877321826}
+  distanceToTargetToDestroyProjectile: 0.2
   anim: {fileID: 6446711008609547582}
 --- !u!114 &2135278630877321826
 MonoBehaviour:

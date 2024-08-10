@@ -7,6 +7,7 @@ public class DynamiteDamage : MonoBehaviour
     [SerializeField] private float range;
     [SerializeField] private float damage;
     [SerializeField] private LayerMask layerMask;
+    [SerializeField] private GameObject sunetExplode;
     public void DestroyGO()
     {
         Destroy(transform.parent.gameObject);
@@ -21,6 +22,7 @@ public class DynamiteDamage : MonoBehaviour
             collider.gameObject.TryGetComponent<PlayerHealth>(out var health);
             health.TakeDamage(damage);
         }
+        Instantiate(sunetExplode);
     }
 
     void OnDrawGizmos()

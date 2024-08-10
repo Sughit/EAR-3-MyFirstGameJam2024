@@ -149,3 +149,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f962671a22715b4fa8ad50e1df96411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sunetPickUp: {fileID: 81318471811775586, guid: b9ebd288e4986ba4fb0d3f1d8de67992, type: 3}

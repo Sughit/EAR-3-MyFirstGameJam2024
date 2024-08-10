@@ -8,6 +8,7 @@ public class BarrelAttack : AgentAttack
     [SerializeField] private float range;
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private float time = 3f;
+    [SerializeField] private GameObject sunetExplode;
 
     void Awake()
     {
@@ -27,6 +28,10 @@ public class BarrelAttack : AgentAttack
             collider.gameObject.TryGetComponent<PlayerHealth>(out var health);
             health.TakeDamage(damage);
         }
+    }
+    public void Explozie()
+    {
+        Instantiate(sunetExplode);
     }
 
     public void DestroyGO()

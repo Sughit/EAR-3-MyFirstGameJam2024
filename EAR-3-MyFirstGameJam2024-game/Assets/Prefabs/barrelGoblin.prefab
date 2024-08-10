@@ -412,6 +412,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   time: 3
+  sunetExplode: {fileID: 81318471811775586, guid: 07e358309a76ebb49b770d3b0ff39744, type: 3}
 --- !u!1 &6109885875103671162
 GameObject:
   m_ObjectHideFlags: 0
