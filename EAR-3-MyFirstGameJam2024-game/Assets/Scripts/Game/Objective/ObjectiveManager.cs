@@ -25,6 +25,9 @@ public class ObjectiveManager : MonoBehaviour
     [SerializeField] GameObject objectiveGOBuilding, objectiveGOItem;
     [SerializeField] Sprite woodSprite, meatSprite, goldSprite, houseSprite, mineSprite, towerSprite;
 
+    //Variabile pt fiecare GO care are cladirea/itemul
+    private GameObject woodGO, meatGO, goldGO, houseGO, mineGO, towerGO;
+
     //Variabila de decizie a obiectivului
     int index;
     public ObjectiveType objectiveType;
@@ -108,18 +111,24 @@ public class ObjectiveManager : MonoBehaviour
         {
             GameObject objGO = Instantiate(objectiveGOItem, placeToSpawnObjective);
             objGO.GetComponent<ObjectiveGO>().SetItem(woodSprite, numWood);
+
+            woodGO = objGO;
         }
 
         if(numMeat > 0)
         {
             GameObject objGO = Instantiate(objectiveGOItem, placeToSpawnObjective);
             objGO.GetComponent<ObjectiveGO>().SetItem(meatSprite, numMeat);
+
+            meatGO = objGO;
         }
 
         if(numGold > 0)
         {
             GameObject objGO = Instantiate(objectiveGOItem, placeToSpawnObjective);
             objGO.GetComponent<ObjectiveGO>().SetItem(goldSprite, numGold);
+
+            goldGO = objGO;
         }
     }
 
@@ -133,12 +142,15 @@ public class ObjectiveManager : MonoBehaviour
             numHousesToDestroy = Random.Range(4, numHouses);
             objGO.GetComponent<ObjectiveGO>().SetItem(houseSprite, numHousesToDestroy);
 
+            houseGO = objGO;
         }
         else if(numHouses > 1)
         {
             GameObject objGO = Instantiate(objectiveGOBuilding, placeToSpawnObjective);
             numHousesToDestroy = Random.Range(1, numHouses);
             objGO.GetComponent<ObjectiveGO>().SetItem(houseSprite, numHousesToDestroy);
+
+            houseGO = objGO;
         }
 
         if(numMines > 3) 
@@ -146,6 +158,8 @@ public class ObjectiveManager : MonoBehaviour
             GameObject objGO = Instantiate(objectiveGOBuilding, placeToSpawnObjective);
             numMinesToDestroy = Random.Range(1, numMines);
             objGO.GetComponent<ObjectiveGO>().SetItem(mineSprite, numMinesToDestroy);
+
+            mineGO = objGO;
         }
 
         if(numTowers > 5) 
@@ -153,12 +167,16 @@ public class ObjectiveManager : MonoBehaviour
             GameObject objGO = Instantiate(objectiveGOBuilding, placeToSpawnObjective);
             numTowersToDestroy = Random.Range(4, numTowers);
             objGO.GetComponent<ObjectiveGO>().SetItem(towerSprite, numTowersToDestroy);
+
+            towerGO = objGO;
         }
         else if(numTowers > 1) 
         {
             GameObject objGO = Instantiate(objectiveGOBuilding, placeToSpawnObjective);
             numTowersToDestroy = Random.Range(1, numTowers);
             objGO.GetComponent<ObjectiveGO>().SetItem(towerSprite, numTowersToDestroy);
+
+            towerGO = objGO;
         }
     }
 
@@ -167,16 +185,19 @@ public class ObjectiveManager : MonoBehaviour
         if(name == "Wood")
         {
             numWood--;
+            woodGO.GetComponent<ObjectiveGO>().SetItem(numWood);
             CheckIfObjectiveCompleted();
         }
         else if(name == "Meat")
         {
             numMeat--;
+            meatGO.GetComponent<ObjectiveGO>().SetItem(numMeat);
             CheckIfObjectiveCompleted();
         }
         else if(name == "Gold")
         {
             numGold--;
+            goldGO.GetComponent<ObjectiveGO>().SetItem(numGold);
             CheckIfObjectiveCompleted();
         }
     }
@@ -186,16 +207,19 @@ public class ObjectiveManager : MonoBehaviour
         if(name == "GoblinHouse")
         {
             numHousesToDestroy--;
+            houseGO.GetComponent<ObjectiveGO>().SetItem(numHousesToDestroy);
             CheckIfObjectiveCompleted();
         }
         else if(name == "GoldMine")
         {
             numMinesToDestroy--;
+            mineGO.GetComponent<ObjectiveGO>().SetItem(numMinesToDestroy);
             CheckIfObjectiveCompleted();
         }
         else if(name == "GoblinTower")
         {
             numTowersToDestroy--;
+            towerGO.GetComponent<ObjectiveGO>().SetItem(numTowersToDestroy);
             CheckIfObjectiveCompleted();
         }
     }

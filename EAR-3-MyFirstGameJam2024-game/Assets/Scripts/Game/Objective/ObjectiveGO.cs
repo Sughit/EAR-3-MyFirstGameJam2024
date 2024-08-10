@@ -14,4 +14,10 @@ public class ObjectiveGO : MonoBehaviour
         img.sprite = icon;
         text.text = $"{num}";
     }
+
+    public void SetItem(int num)
+    {
+        num = Mathf.Clamp(num, 0, 255);
+        text.text = $"{num}";
+    }
 }
