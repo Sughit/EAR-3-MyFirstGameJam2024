@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private float minHour, maxHour;
 
-    [SerializeField] private const float secondsPerDay = 300f;
+    [SerializeField] private const float secondsPerDay = 120f;
     public float currentHour;
 
     public PlayerType playerType;
